@@ -1,0 +1,13 @@
+SETIDEVI SCHOOL RESULT PROCESSING APP — START HERE
+
+1. Extract this ZIP to a folder.
+2. Keep index.html, style.css and app.js together in that folder.
+3. Open a terminal in this folder and run: python -m http.server 8000
+4. Open http://localhost:8000 in your browser.
+5. Open Import / Export and choose First Terminal Examination 2083.xlsx.
+6. Review detected classes, students, subjects, and warnings before clicking Confirm and import.
+7. Review Data & Formula Audit. In Settings, configure verified full marks and school-approved grade rules before relying on results.
+
+The workbook is not included in this ZIP because it contains school data; select your original Excel file yourself.
+Excel import loads SheetJS from a CDN and needs internet. This is a front-end prototype; data stays in the current browser and is not synchronized across devices.
+See README.md and DEPLOYMENT_GUIDE.md for details.

@@ -1,0 +1,9 @@
+{
+  "name": "setidevi-school-result-processing-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static HTML, CSS and JavaScript starter for school examination result processing",
+  "scripts": {
+    "serve": "python -m http.server 8000"
+  }
+}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#142b4a" />
+  <meta name="description" content="Shree Setidevi Secondary School result processing app" />
+  <title>Setidevi School | Result Processing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <!-- SheetJS is used in-browser to read Excel files. Internet is required unless this library is bundled locally. -->
+  <script defer src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-lockup">
+        <div class="brand-mark">S</div>
+        <div class="brand-copy"><strong>SETIDEVI</strong><span>School Result System</span></div>
+        <button class="icon-button sidebar-close" id="sidebarClose" aria-label="Close menu">×</button>
+      </div>
+      <div class="school-chip"><span class="chip-dot"></span><span>Academic year <b id="sidebarYear">2083</b></span></div>
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-page="dashboard"><span class="nav-icon">▦</span><span>Dashboard</span></button>
+        <button class="nav-item" data-page="students"><span class="nav-icon">♙</span><span>Students</span></button>
+        <button class="nav-item" data-page="marks"><span class="nav-icon">✎</span><span>Marks Entry</span></button>
+        <button class="nav-item" data-page="markledger"><span class="nav-icon">▤</span><span>Mark Ledger</span></button>
+        <button class="nav-item" data-page="gradeledger"><span class="nav-icon">▥</span><span>Grade Ledger</span></button>
+        <button class="nav-item" data-page="gradesheets"><span class="nav-icon">▧</span><span>Gradesheets</span></button>
+        <button class="nav-item" data-page="analysis"><span class="nav-icon">⌁</span><span>Result Analysis</span></button>
+      </nav>
+      <div class="nav-label secondary-label">SYSTEM</div>
+      <nav class="side-nav">
+        <button class="nav-item" data-page="import"><span class="nav-icon">⇧</span><span>Import / Export</span><span class="nav-count" id="issueNavCount">0</span></button>
+        <button class="nav-item" data-page="audit"><span class="nav-icon">✓</span><span>Data & Formula Audit</span></button>
+        <button class="nav-item" data-page="settings"><span class="nav-icon">⚙</span><span>Settings</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="storage-status"><span class="status-pulse"></span><div><b>Local workspace</b><small id="saveStatus">Saved in this browser</small></div></div>
+        <div class="sidebar-footnote">Use a backup export regularly. This starter app stores data in this browser only.</div>
+      </div>
+    </aside>
+
+    <div class="main-column">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-button menu-button" id="menuToggle" aria-label="Open menu">☰</button>
+          <div class="breadcrumb"><span>School Workspace</span><span class="crumb-sep">/</span><b id="crumbCurrent">Dashboard</b></div>
+        </div>
+        <div class="topbar-right">
+          <div class="exam-pill"><span class="exam-dot"></span><span id="examPill">First Terminal Examination 2083</span></div>
+          <button class="avatar" id="profileButton" title="Workspace information">SD</button>
+        </div>
+      </header>
+      <main id="appContent" class="page-content" tabindex="-1"></main>
+      <footer class="app-footer"><span>Shree Setidevi Secondary School</span><span>Result Processing Workspace <span class="footer-sep">•</span> <span id="footerYear">2083</span></span></footer>
+    </div>
+  </div>
+  <div id="modalRoot"></div>
+  <div id="toastRegion" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
